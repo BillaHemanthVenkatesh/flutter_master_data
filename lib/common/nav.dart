@@ -2,6 +2,7 @@ import 'package:bus/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'classs.dart';
 import 'course.dart';
+import 'constants.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         body: Row(
       children: [
         NavigationRail(
-     backgroundColor:Constants.te1,
+     backgroundColor: Constants.navbar,
           onDestinationSelected: (index) {
             setState(() {
               _selectedIndex = index;
@@ -40,22 +41,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                 style: TextStyle(color: Colors.white),
               ),
               icon: Icon(
-                Icons.home,
+                Icons.class_,
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
-                Icons.home,
+                Icons.class_,
                 color: Colors.white,
               ),
             ),
             NavigationRailDestination(
               label: Text('Courses', style: TextStyle(color: Colors.white)),
               icon: Icon(
-                Icons.favorite,
+                Icons.library_books_outlined,
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
-                Icons.favorite,
+                Icons.library_books_rounded,
                 color: Colors.white,
               ),
             ),
