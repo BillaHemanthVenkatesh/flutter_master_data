@@ -273,6 +273,7 @@ class _CoursePageState extends State<CoursePage> {
   void _updateTextControllers(User user) {
     setState(() {
       nameController.text = user.name;
+      // value:user.name;
       codeController.text = user.code;
       idController.text = user.id;
     });
