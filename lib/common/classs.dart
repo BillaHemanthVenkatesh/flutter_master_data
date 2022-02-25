@@ -28,10 +28,10 @@ class _ClassPageState extends State<ClassPage> {
   @override
   Widget build(BuildContext context) {
     Widget bodyData() => DataTable(
-          onSelectAll: (b) {},
-          sortColumnIndex: 0,
-          sortAscending: true,
-          columns: const <DataColumn>[
+          // onSelectAll: (b) {},
+          // sortColumnIndex: 1,
+          // sortAscending: true,          
+          columns: const <DataColumn>[  
             DataColumn(
                 label: Text(
                   "Name",
@@ -39,7 +39,9 @@ class _ClassPageState extends State<ClassPage> {
                       fontWeight: FontWeight.bold,
                       color: Constants.ta),
                 ),
-                tooltip: "To Display name"),
+                tooltip: "To Display name"
+                ),
+                
             DataColumn(
                 label: Text(
                   "Code",
@@ -58,7 +60,7 @@ class _ClassPageState extends State<ClassPage> {
                 tooltip: "To Display ID"),
             DataColumn(
                 label: Text(
-                  "Update",
+                  "Edit",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Constants.ta),
@@ -123,7 +125,7 @@ class _ClassPageState extends State<ClassPage> {
           "Class Information",
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color.fromARGB(255, 8, 81, 129),
+        backgroundColor: Constants.appbar,
         centerTitle: true,
       ),
       body: Center(
@@ -132,7 +134,7 @@ class _ClassPageState extends State<ClassPage> {
             // Container(height: 20, width: 200,child: Text("Cousres"),color: Colors.amberAccent),
             bodyData(),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: Constants.formPad,
               child: Form(
                 key: form,
                 child: Column(
@@ -152,12 +154,15 @@ class _ClassPageState extends State<ClassPage> {
                       decoration: const InputDecoration(
                         labelText: 'Name',
                         hintText: 'Name',
+                        icon:Icon(
+                          Icons.person,
+                        ),
                         labelStyle: TextStyle(
                             decorationStyle: TextDecorationStyle.solid),
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: Constants.boxHeight,
                     ),
                     TextFormField(
                       controller: codeController,
@@ -174,10 +179,13 @@ class _ClassPageState extends State<ClassPage> {
                           labelText: 'Code',
                           hintText: 'Code',
                           labelStyle: TextStyle(
-                              decorationStyle: TextDecorationStyle.solid)),
+                              decorationStyle: TextDecorationStyle.solid),
+                              icon:Icon(
+                          Icons.source
+                        ),),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: Constants.boxHeight,
                     ),
                     TextFormField(
                       controller: idController,
@@ -196,10 +204,14 @@ class _ClassPageState extends State<ClassPage> {
                         hintText: 'ID',
                         labelStyle: TextStyle(
                             decorationStyle: TextDecorationStyle.solid),
+                            icon:Icon(
+                          Icons.credit_card,
+                        ),
                       ),
+                      
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: Constants.boxHeight,
                     ),
                     Column(
                       // crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,7 +241,7 @@ class _ClassPageState extends State<ClassPage> {
                                   }
                                 },
                               ),
-                              const SizedBox(width: 20),
+                              const SizedBox(width: Constants.boxWidth),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   primary: Constants.td,

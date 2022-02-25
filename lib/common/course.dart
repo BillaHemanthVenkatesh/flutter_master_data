@@ -28,9 +28,9 @@ class _CoursePageState extends State<CoursePage> {
   @override
   Widget build(BuildContext context) {
     Widget bodyData() => DataTable(
-          onSelectAll: (b) {},
-          sortColumnIndex: 0,
-          sortAscending: true,
+          // onSelectAll: (b) {},
+          // sortColumnIndex: 0,
+          // sortAscending: true,
           columns: const <DataColumn>[
             DataColumn(
                 label: Text(
@@ -117,13 +117,12 @@ class _CoursePageState extends State<CoursePage> {
         );
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 230, 236, 240),
       appBar: AppBar(
         title: const Text(
           "Course Information",
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color.fromARGB(255, 34, 3, 92),
+        backgroundColor: Constants.coursebar,
         centerTitle: true,
       ),
       body: Center(
@@ -132,7 +131,7 @@ class _CoursePageState extends State<CoursePage> {
             
             bodyData(),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: Constants.formPad,
               child: Form(
                 key: form,
                 child: Column(
@@ -149,15 +148,19 @@ class _CoursePageState extends State<CoursePage> {
                         }
                         return null;
                       },
+                      
                       decoration: const InputDecoration(
                         labelText: 'Name',
                         hintText: 'Name',
+                        icon:Icon(
+                          Icons.person,
+                        ),
                         labelStyle: TextStyle(
                             decorationStyle: TextDecorationStyle.solid),
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: Constants.boxHeight,
                     ),
                     TextFormField(
                       controller: codeController,
@@ -174,10 +177,13 @@ class _CoursePageState extends State<CoursePage> {
                           labelText: 'Code',
                           hintText: 'Code',
                           labelStyle: TextStyle(
-                              decorationStyle: TextDecorationStyle.solid)),
+                              decorationStyle: TextDecorationStyle.solid),
+                              icon:Icon(
+                          Icons.source,
+                        ),),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: Constants.boxHeight,
                     ),
                     TextFormField(
                       controller: idController,
@@ -196,10 +202,13 @@ class _CoursePageState extends State<CoursePage> {
                         hintText: 'ID',
                         labelStyle: TextStyle(
                             decorationStyle: TextDecorationStyle.solid),
+                            icon:Icon(
+                          Icons.credit_card,
+                        ),
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: Constants.boxHeight,
                     ),
                     Column(
                       // crossAxisAlignment: CrossAxisAlignment.start,
@@ -210,7 +219,7 @@ class _CoursePageState extends State<CoursePage> {
                             children: <Widget>[
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 25, 131, 28),
+                                  primary: Constants.addButton,
                                 ),
                                 child: const Text(
                                   "ADD",
@@ -228,10 +237,10 @@ class _CoursePageState extends State<CoursePage> {
                                   }
                                 },
                               ),
-                              const SizedBox(width: 20),
+                              const SizedBox(width: Constants.boxWidth),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 38, 36, 175),
+                                  primary:Constants.td,
                                 ),
                                 child: const Text(
                                   "UPDATE",

@@ -39,11 +39,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                 style: TextStyle(color: Colors.white),
               ),
               icon: Icon(
-                Icons.class_,
+                Icons.grid_view_outlined,
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
-                Icons.class_,
+                Icons.grid_view_rounded,
                 color: Colors.white,
               ),
             ),
