@@ -1,3 +1,4 @@
+import 'package:bus/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'classs.dart';
 import 'course.dart';
@@ -24,7 +25,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         body: Row(
       children: [
         NavigationRail(
-     backgroundColor:Color.fromARGB(255, 1, 41, 73),
+     backgroundColor:Constants.te,
           onDestinationSelected: (index) {
             setState(() {
               _selectedIndex = index;
