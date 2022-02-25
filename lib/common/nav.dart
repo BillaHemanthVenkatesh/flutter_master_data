@@ -52,7 +52,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             NavigationRailDestination(
               label: Text('Courses', style: TextStyle(color: Colors.white)),
               icon: Icon(
-                Icons.school,
+                Icons.library_books_outlined,
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
