@@ -41,7 +41,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 style: TextStyle(color: Colors.white),
               ),
               icon: Icon(
-                Icons.school,
+                Icons.grid_view_outlined,
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
