@@ -42,7 +42,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
-                Icons.home,
+                Icons.grid_view_outlined,
                 color: Colors.white,
               ),
             ),
