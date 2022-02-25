@@ -6,5 +6,5 @@ class Constants{
   static const tb=Color.fromARGB(255, 242, 245, 247);
   static const tc=Color.fromARGB(255, 25, 131, 28);
   static const td=Color.fromARGB(255, 38, 36, 175);
-  static const te=Color.fromARGB(255, 1, 41, 73);
+  static const te1=Color.fromARGB(255, 1, 41, 73);
 }
