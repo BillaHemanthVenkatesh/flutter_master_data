@@ -1,3 +1,4 @@
+import 'package:bus/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'classs.dart';
 import 'course.dart';
@@ -24,13 +25,14 @@ class _HomeWidgetState extends State<HomeWidget> {
         body: Row(
       children: [
         NavigationRail(
-     backgroundColor: Color.fromARGB(255, 4, 55, 97),
+     backgroundColor:Constants.te1,
           onDestinationSelected: (index) {
             setState(() {
               _selectedIndex = index;
             });
           },
           labelType: NavigationRailLabelType.selected,
+          // groupAlignment: 0,
           destinations: const [
             NavigationRailDestination(
               label: Text(
@@ -49,11 +51,11 @@ class _HomeWidgetState extends State<HomeWidget> {
             NavigationRailDestination(
               label: Text('Courses', style: TextStyle(color: Colors.white)),
               icon: Icon(
-                Icons.library_books,
+                Icons.favorite,
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
-                Icons.library_books,
+                Icons.favorite,
                 color: Colors.white,
               ),
             ),
