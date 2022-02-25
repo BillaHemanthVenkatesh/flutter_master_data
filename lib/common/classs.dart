@@ -146,8 +146,8 @@ class _ClassPageState extends State<ClassPage> {
                       autocorrect: false,
                       maxLines: 1,
                       validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'This field is required';
+                        if (value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                          return 'enter correct name';
                         }
                         return null;
                       },
@@ -194,8 +194,8 @@ class _ClassPageState extends State<ClassPage> {
                       autocorrect: false,
                       maxLines: 1,
                       validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'This field is required';
+                        if (value!.isEmpty || !RegExp(r'^(?:[+0][1-9])?[0-9]{10}$').hasMatch(value)) {
+                          return 'enter correct id';
                         }
                         return null;
                       },

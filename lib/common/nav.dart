@@ -1,3 +1,4 @@
+import 'package:bus/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'classs.dart';
 import 'course.dart';
@@ -32,6 +33,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             });
           },
           labelType: NavigationRailLabelType.selected,
+          // groupAlignment: 0,
           destinations: const [
             NavigationRailDestination(
               label: Text(
