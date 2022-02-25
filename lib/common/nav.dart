@@ -26,7 +26,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         body: Row(
       children: [
         NavigationRail(
-     backgroundColor: Constants.navbar,
+          backgroundColor: Constants.navbar,
           onDestinationSelected: (index) {
             setState(() {
               _selectedIndex = index;
@@ -41,7 +41,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 style: TextStyle(color: Colors.white),
               ),
               icon: Icon(
-                Icons.grid_view_outlined,
+                Icons.school,
                 color: Colors.grey,
               ),
               selectedIcon: Icon(
