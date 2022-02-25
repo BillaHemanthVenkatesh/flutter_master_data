@@ -126,135 +126,137 @@ class _CoursePageState extends State<CoursePage> {
         backgroundColor: Color.fromARGB(255, 34, 3, 92),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            
-            bodyData(),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Form(
-                key: form,
-                child: Column(
-                  children: <Widget>[
-                    TextFormField(
-                      controller: nameController,
-                      focusNode: _focusNode,
-                      keyboardType: TextInputType.text,
-                      autocorrect: false,
-                      maxLines: 1,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'This field is required';
-                        }
-                        return null;
-                      },
-                      decoration: const InputDecoration(
-                        labelText: 'Name',
-                        hintText: 'Name',
-                        labelStyle: TextStyle(
-                            decorationStyle: TextDecorationStyle.solid),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      controller: codeController,
-                      keyboardType: TextInputType.text,
-                      autocorrect: false,
-                      maxLines: 1,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'This field is required';
-                        }
-                        return null;
-                      },
-                      decoration: const InputDecoration(
-                          labelText: 'Code',
-                          hintText: 'Code',
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              
+              bodyData(),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Form(
+                  key: form,
+                  child: Column(
+                    children: <Widget>[
+                      TextFormField(
+                        controller: nameController,
+                        focusNode: _focusNode,
+                        keyboardType: TextInputType.text,
+                        autocorrect: false,
+                        maxLines: 1,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'This field is required';
+                          }
+                          return null;
+                        },
+                        decoration: const InputDecoration(
+                          labelText: 'Name',
+                          hintText: 'Name',
                           labelStyle: TextStyle(
-                              decorationStyle: TextDecorationStyle.solid)),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      controller: idController,
-                      // focusNode: _focusNode,
-                      keyboardType: TextInputType.text,
-                      autocorrect: false,
-                      maxLines: 1,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'This field is required';
-                        }
-                        return null;
-                      },
-                      decoration: const InputDecoration(
-                        labelText: 'ID',
-                        hintText: 'ID',
-                        labelStyle: TextStyle(
-                            decorationStyle: TextDecorationStyle.solid),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Column(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Center(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 25, 131, 28),
-                                ),
-                                child: const Text(
-                                  "ADD",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onPressed: () {
-                                  if (validate() == true) {
-                                    form.currentState!.save();
-                                    addUserToList(
-                                      nameController.text,
-                                      codeController.text,
-                                      idController.text,
-                                    );
-                                    clearForm();
-                                  }
-                                },
-                              ),
-                              const SizedBox(width: 20),
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 38, 36, 175),
-                                ),
-                                child: const Text(
-                                  "UPDATE",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onPressed: () {
-                                  if (validate() == true) {
-                                    form.currentState!.save();
-                                    updateForm();
-                                    clearForm();
-                                  }
-                                },
-                              ),
-                            ],
-                          ),
+                              decorationStyle: TextDecorationStyle.solid),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        controller: codeController,
+                        keyboardType: TextInputType.text,
+                        autocorrect: false,
+                        maxLines: 1,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'This field is required';
+                          }
+                          return null;
+                        },
+                        decoration: const InputDecoration(
+                            labelText: 'Code',
+                            hintText: 'Code',
+                            labelStyle: TextStyle(
+                                decorationStyle: TextDecorationStyle.solid)),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        controller: idController,
+                        // focusNode: _focusNode,
+                        keyboardType: TextInputType.text,
+                        autocorrect: false,
+                        maxLines: 1,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'This field is required';
+                          }
+                          return null;
+                        },
+                        decoration: const InputDecoration(
+                          labelText: 'ID',
+                          hintText: 'ID',
+                          labelStyle: TextStyle(
+                              decorationStyle: TextDecorationStyle.solid),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Column(
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Center(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color.fromARGB(255, 25, 131, 28),
+                                  ),
+                                  child: const Text(
+                                    "ADD",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    if (validate() == true) {
+                                      form.currentState!.save();
+                                      addUserToList(
+                                        nameController.text,
+                                        codeController.text,
+                                        idController.text,
+                                      );
+                                      clearForm();
+                                    }
+                                  },
+                                ),
+                                const SizedBox(width: 20),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color.fromARGB(255, 38, 36, 175),
+                                  ),
+                                  child: const Text(
+                                    "UPDATE",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    if (validate() == true) {
+                                      form.currentState!.save();
+                                      updateForm();
+                                      clearForm();
+                                    }
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
