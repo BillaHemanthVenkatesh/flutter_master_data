@@ -196,67 +196,67 @@ class _CoursePageState extends State<CoursePage> {
                         hintText: 'ID',
                         labelStyle: TextStyle(
                             decorationStyle: TextDecorationStyle.solid),
+                    )),
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Column(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Center(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 25, 131, 28),
+                      Column(
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Center(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color.fromARGB(255, 25, 131, 28),
+                                  ),
+                                  child: const Text(
+                                    "ADD",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    if (validate() == true) {
+                                      form.currentState!.save();
+                                      addUserToList(
+                                        nameController.text,
+                                        codeController.text,
+                                        idController.text,
+                                      );
+                                      clearForm();
+                                    }
+                                  },
                                 ),
-                                child: const Text(
-                                  "ADD",
-                                  style: TextStyle(color: Colors.white),
+                                const SizedBox(width: 20),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color.fromARGB(255, 38, 36, 175),
+                                  ),
+                                  child: const Text(
+                                    "UPDATE",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    if (validate() == true) {
+                                      form.currentState!.save();
+                                      updateForm();
+                                      clearForm();
+                                    }
+                                  },
                                 ),
-                                onPressed: () {
-                                  if (validate() == true) {
-                                    form.currentState!.save();
-                                    addUserToList(
-                                      nameController.text,
-                                      codeController.text,
-                                      idController.text,
-                                    );
-                                    clearForm();
-                                  }
-                                },
-                              ),
-                              const SizedBox(width: 20),
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 38, 36, 175),
-                                ),
-                                child: const Text(
-                                  "UPDATE",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onPressed: () {
-                                  if (validate() == true) {
-                                    form.currentState!.save();
-                                    updateForm();
-                                    clearForm();
-                                  }
-                                },
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
+      
     );
   }
 
