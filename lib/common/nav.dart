@@ -32,6 +32,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             });
           },
           labelType: NavigationRailLabelType.selected,
+          groupAlignment: 0,
           destinations: const [
             NavigationRailDestination(
               label: Text(
