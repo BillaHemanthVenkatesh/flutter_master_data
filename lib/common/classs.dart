@@ -194,7 +194,7 @@ class _ClassPageState extends State<ClassPage> {
                       autocorrect: false,
                       maxLines: 1,
                       validator: (value) {
-                        if (value!.isEmpty || !RegExp(r'^(?:[+0][1-9])?[0-9]{10}$').hasMatch(value)) {
+                        if (value!.isEmpty) {
                           return 'enter correct id';
                         }
                         return null;
