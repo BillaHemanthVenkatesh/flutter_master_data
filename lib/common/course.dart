@@ -154,7 +154,7 @@ class _CoursePageState extends State<CoursePage> {
                           border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.teal),
                           ),
-                          icon:Icon(
+                          prefixIcon:Icon(
                             Icons.person,
                           ),
                           labelStyle: TextStyle(
@@ -183,7 +183,7 @@ class _CoursePageState extends State<CoursePage> {
                           ),
                             labelStyle: TextStyle(
                                 decorationStyle: TextDecorationStyle.solid),
-                                icon:Icon(
+                                prefixIcon:Icon(
                             Icons.source,
                           ),),
                       ),
@@ -210,7 +210,7 @@ class _CoursePageState extends State<CoursePage> {
                           ),
                           labelStyle: TextStyle(
                               decorationStyle: TextDecorationStyle.solid),
-                              icon:Icon(
+                              prefixIcon:Icon(
                             Icons.credit_card,
                           ),
                         ),
