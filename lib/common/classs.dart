@@ -27,10 +27,7 @@ class _ClassPageState extends State<ClassPage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget bodyData() => DataTable(
-          // onSelectAll: (b) {},
-          // sortColumnIndex: 1,
-          // sortAscending: true,          
+    Widget bodyData() => DataTable(         
           columns: const <DataColumn>[  
             DataColumn(
                 label: Text(
@@ -65,7 +62,7 @@ class _ClassPageState extends State<ClassPage> {
                       fontWeight: FontWeight.bold,
                       color: Constants.ta),
                 ),
-                tooltip: "Update data"),
+                tooltip: "Edit data"),
             DataColumn(
                 label: Text(
                   "Delete",

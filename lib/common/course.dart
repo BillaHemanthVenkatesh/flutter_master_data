@@ -28,9 +28,7 @@ class _CoursePageState extends State<CoursePage> {
   @override
   Widget build(BuildContext context) {
     Widget bodyData() => DataTable(
-          // onSelectAll: (b) {},
-          // sortColumnIndex: 0,
-          // sortAscending: true,
+         
           columns: const <DataColumn>[
             DataColumn(
                 label: Text(
@@ -58,12 +56,12 @@ class _CoursePageState extends State<CoursePage> {
                 tooltip: "To Display ID"),
             DataColumn(
                 label: Text(
-                  "Update",
+                  "Edit",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Constants.ta),
                 ),
-                tooltip: "Update data"),
+                tooltip: "Edit data"),
             DataColumn(
                 label: Text(
                   "Delete",
