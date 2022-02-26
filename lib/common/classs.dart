@@ -27,48 +27,41 @@ class _ClassPageState extends State<ClassPage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget bodyData() => DataTable(         
-          columns: const <DataColumn>[  
+    Widget bodyData() => DataTable(
+          columns: const <DataColumn>[
             DataColumn(
                 label: Text(
                   "Name",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
-                tooltip: "To Display name"
-                ),
-                
+                tooltip: "To Display name"),
             DataColumn(
                 label: Text(
                   "Code",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "To Display code"),
             DataColumn(
                 label: Text(
                   "ID",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "To Display ID"),
             DataColumn(
                 label: Text(
                   "Edit",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "Edit data"),
             DataColumn(
                 label: Text(
                   "Delete",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "Delete data"),
           ],
@@ -144,7 +137,8 @@ class _ClassPageState extends State<ClassPage> {
                         autocorrect: false,
                         maxLines: 1,
                         validator: (value) {
-                          if (value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                          if (value!.isEmpty ||
+                              !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
                             return 'enter correct name';
                           }
                           return null;
@@ -152,8 +146,11 @@ class _ClassPageState extends State<ClassPage> {
                         decoration: const InputDecoration(
                           labelText: 'Name',
                           hintText: 'Name',
-                          icon:Icon(
+                          prefixIcon: Icon(
                             Icons.person,
+                          ),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal),
                           ),
                           labelStyle: TextStyle(
                               decorationStyle: TextDecorationStyle.solid),
@@ -174,13 +171,15 @@ class _ClassPageState extends State<ClassPage> {
                           return null;
                         },
                         decoration: const InputDecoration(
-                            labelText: 'Code',
-                            hintText: 'Code',
-                            labelStyle: TextStyle(
-                                decorationStyle: TextDecorationStyle.solid),
-                                icon:Icon(
-                            Icons.source
-                          ),),
+                          labelText: 'Code',
+                          hintText: 'Code',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal),
+                          ),
+                          labelStyle: TextStyle(
+                              decorationStyle: TextDecorationStyle.solid),
+                          prefixIcon: Icon(Icons.source),
+                        ),
                       ),
                       const SizedBox(
                         height: Constants.boxHeight,
@@ -200,13 +199,15 @@ class _ClassPageState extends State<ClassPage> {
                         decoration: const InputDecoration(
                           labelText: 'ID',
                           hintText: 'ID',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal),
+                          ),
                           labelStyle: TextStyle(
                               decorationStyle: TextDecorationStyle.solid),
-                              icon:Icon(
+                          prefixIcon: Icon(
                             Icons.credit_card,
                           ),
                         ),
-                        
                       ),
                       const SizedBox(
                         height: Constants.boxHeight,

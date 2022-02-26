@@ -151,6 +151,9 @@ class _CoursePageState extends State<CoursePage> {
                         decoration: const InputDecoration(
                           labelText: 'Name',
                           hintText: 'Name',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal),
+                          ),
                           icon:Icon(
                             Icons.person,
                           ),
@@ -175,6 +178,9 @@ class _CoursePageState extends State<CoursePage> {
                         decoration: const InputDecoration(
                             labelText: 'Code',
                             hintText: 'Code',
+                            border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal),
+                          ),
                             labelStyle: TextStyle(
                                 decorationStyle: TextDecorationStyle.solid),
                                 icon:Icon(
@@ -199,6 +205,9 @@ class _CoursePageState extends State<CoursePage> {
                         decoration: const InputDecoration(
                           labelText: 'ID',
                           hintText: 'ID',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal),
+                          ),
                           labelStyle: TextStyle(
                               decorationStyle: TextDecorationStyle.solid),
                               icon:Icon(
