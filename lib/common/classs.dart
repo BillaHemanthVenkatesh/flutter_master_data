@@ -28,48 +28,41 @@ class _ClassPageState extends State<ClassPage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget bodyData() => DataTable(         
-          columns: const <DataColumn>[  
+    Widget bodyData() => DataTable(
+          columns: const <DataColumn>[
             DataColumn(
                 label: Text(
                   "Name",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
-                tooltip: "To Display name"
-                ),
-                
+                tooltip: "To Display name"),
             DataColumn(
                 label: Text(
                   "Code",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "To Display code"),
             DataColumn(
                 label: Text(
                   "ID",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "To Display ID"),
             DataColumn(
                 label: Text(
                   "Edit",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "Edit data"),
             DataColumn(
                 label: Text(
                   "Delete",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Constants.ta),
+                      fontWeight: FontWeight.bold, color: Constants.ta),
                 ),
                 tooltip: "Delete data"),
           ],
@@ -145,7 +138,8 @@ class _ClassPageState extends State<ClassPage> {
                         autocorrect: false,
                         maxLines: 1,
                         validator: (value) {
-                          if (value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                          if (value!.isEmpty ||
+                              !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
                             return 'enter correct name';
                           }
                           return null;
@@ -217,7 +211,6 @@ class _ClassPageState extends State<ClassPage> {
                             Icons.credit_card,
                           ),
                         ),
-                        
                       ),
                       const SizedBox(
                         height: Constants.boxHeight,
