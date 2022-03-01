@@ -1,8 +1,11 @@
 import 'package:bus/common/constants.dart';
+import 'package:bus/common/course.dart';
+
 import 'package:flutter/material.dart';
 import 'classs.dart';
-import 'course.dart';
+// import 'course.dart';
 import 'constants.dart';
+
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);

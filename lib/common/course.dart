@@ -1,7 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'modal.dart';
 import 'constants.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 class CoursePage extends StatefulWidget {
   const CoursePage({Key? key}) : super(key: key);
 
@@ -19,11 +21,7 @@ class _CoursePageState extends State<CoursePage> {
   bool update = false;
   int currentIndex = 0;
 
-  List<User> userList = [
-    User(name: "abc", code: "a", id: "1"),
-    User(name: "ccc", code: "b", id: "2"),
-    User(name: "ddd", code: "c", id: "3"),
-  ];
+  List<User> userList = <User>[];
 
   @override
   Widget build(BuildContext context) {
@@ -148,13 +146,16 @@ class _CoursePageState extends State<CoursePage> {
                           return null;
                         },
                         
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           labelText: 'Name',
                           hintText: 'Name',
-                          icon:Icon(
+                          border:OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                          icon:const Icon(
                             Icons.person,
                           ),
-                          labelStyle: TextStyle(
+                          labelStyle: const TextStyle(
                               decorationStyle: TextDecorationStyle.solid),
                         ),
                       ),
@@ -172,14 +173,19 @@ class _CoursePageState extends State<CoursePage> {
                           }
                           return null;
                         },
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                             labelText: 'Code',
                             hintText: 'Code',
-                            labelStyle: TextStyle(
+                            border:OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            
+                            labelStyle: const TextStyle(
                                 decorationStyle: TextDecorationStyle.solid),
-                                icon:Icon(
+                                icon:const Icon(
                             Icons.source,
-                          ),),
+                          ),
+                          ),
                       ),
                       const SizedBox(
                         height: Constants.boxHeight,
@@ -196,12 +202,15 @@ class _CoursePageState extends State<CoursePage> {
                           }
                           return null;
                         },
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           labelText: 'ID',
                           hintText: 'ID',
-                          labelStyle: TextStyle(
+                          border:OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                          labelStyle: const TextStyle(
                               decorationStyle: TextDecorationStyle.solid),
-                              icon:Icon(
+                              icon:const Icon(
                             Icons.credit_card,
                           ),
                         ),
@@ -296,7 +305,9 @@ class _CoursePageState extends State<CoursePage> {
 
   void addUserToList(name, code, id) {
     setState(() {
-      userList.add(User(name: name, code: code, id: id));
+      // userList.add(User(name: name, code: code, id: id));
+      saveData(name,code,id);
+      
     });
   }
 
@@ -310,5 +321,21 @@ class _CoursePageState extends State<CoursePage> {
     var valid = form.currentState!.validate();
     if (valid) form.currentState!.save();
     return valid;
+  }
+
+  void saveData(name,code,id) async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    Map data={
+       "Name":name,
+       "Code":code,
+       "id":id,
+     };
+     String json=jsonEncode(data);
+     prefs.setString("Userlist", json);
+     String? data1=prefs.getString("Userlist");
+     if(data1!=null){
+       Map locdata=jsonDecode(data1);
+      userList.add(User(name: locdata['Name'], code:locdata['Code'] , id: locdata['id']));
+     }
   }
 }

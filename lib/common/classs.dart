@@ -1,5 +1,6 @@
 import 'constants.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'modal.dart';
 
 class ClassPage extends StatefulWidget {
@@ -149,13 +150,16 @@ class _ClassPageState extends State<ClassPage> {
                           }
                           return null;
                         },
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           labelText: 'Name',
                           hintText: 'Name',
-                          icon:Icon(
+                          border:OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                          icon:const Icon(
                             Icons.person,
                           ),
-                          labelStyle: TextStyle(
+                          labelStyle: const TextStyle(
                               decorationStyle: TextDecorationStyle.solid),
                         ),
                       ),
@@ -173,12 +177,15 @@ class _ClassPageState extends State<ClassPage> {
                           }
                           return null;
                         },
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                             labelText: 'Code',
                             hintText: 'Code',
-                            labelStyle: TextStyle(
+                            border:OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            labelStyle: const TextStyle(
                                 decorationStyle: TextDecorationStyle.solid),
-                                icon:Icon(
+                                icon:const Icon(
                             Icons.source
                           ),),
                       ),
@@ -197,12 +204,16 @@ class _ClassPageState extends State<ClassPage> {
                           }
                           return null;
                         },
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           labelText: 'ID',
                           hintText: 'ID',
-                          labelStyle: TextStyle(
-                              decorationStyle: TextDecorationStyle.solid),
-                              icon:Icon(
+                          border:OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                          labelStyle: const TextStyle(
+                              decorationStyle: TextDecorationStyle.solid,
+                              ),
+                              icon:const Icon(
                             Icons.credit_card,
                           ),
                         ),
@@ -296,11 +307,22 @@ class _ClassPageState extends State<ClassPage> {
     });
   }
 
-  void addUserToList(name, code, id) {
+  void addUserToList(name, code, id)async {
+     SharedPreferences prefs = await SharedPreferences.getInstance();
+    //  Map data={
+    //    "NAME":User.name,
+
+    //  };
+     
     setState(() {
-      userList.add(User(name: name, code: code, id: id));
+      String name1=(prefs.getString('name')??name);
+     String code1=(prefs.getString('code')??code);
+     String id1=(prefs.getString('id')??id);
+      userList.add(User(name:name1, code: code1, id: id1));
+      // prefs.setStringList('userList', userList.toList().toString())
     });
   }
+  
 
   clearForm() {
     nameController.clear();
